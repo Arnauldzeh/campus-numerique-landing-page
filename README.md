@@ -54,9 +54,9 @@ cd landing-page
 git init
 git add .
 git commit -m "Initial commit - CampusNumerique landing page"
-git branch -M main
+git branch -M master
 git remote add origin https://github.com/Arnauldzeh/campus-numerique-landing-page.git
-git push -u origin main
+git push -u origin master
 ```
 
 2. **Configurer AWS Amplify** :
@@ -66,7 +66,7 @@ git push -u origin main
    - Choisir votre repository `campus-numerique-landing-page`
    - Configurer le build :
      - **App name**: campus-numerique
-     - **Branch**: main
+     - **Branch**: master
      - **Build settings**: Amplify détectera automatiquement le fichier `amplify.yml`
    - Cliquer sur "Save and deploy"
 
