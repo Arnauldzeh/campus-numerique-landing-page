@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CampusNumerique - Landing Page
 
-## Getting Started
+Site web officiel de CampusNumerique, une initiative de formation en technologies numériques basée à Sangmélima, Cameroun.
 
-First, run the development server:
+## 🚀 À propos
 
+CampusNumerique est une entreprise d'éducation aux nouvelles technologies dédiée à offrir aux collégiens, lycéens, étudiants et travailleurs une formation de pointe en codage et en art numérique.
+
+## ✨ Fonctionnalités
+
+- 🎨 Design moderne et responsive (mobile-first)
+- 📱 Interface optimisée pour tous les appareils
+- 🎓 Présentation des bootcamps et formations
+- 📅 Détails des sessions disponibles
+- 💬 Section FAQ
+- 📞 Formulaire de contact
+- 🌐 Support français
+
+## 🛠️ Technologies utilisées
+
+- **Framework**: [Next.js 16.2.9](https://nextjs.org/) (React 19)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Language**: TypeScript
+- **Hosting**: AWS Amplify
+- **CI/CD**: Automated deployment via GitHub
+
+## 📦 Installation
+
+1. Cloner le repository :
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Arnauldzeh/campus-numerique-landing-page.git
+cd campus-numerique-landing-page/landing-page
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Installer les dépendances :
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Lancer le serveur de développement :
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Ouvrir [http://localhost:3000](http://localhost:3000) dans votre navigateur
 
-## Learn More
+## 🚀 Déploiement
 
-To learn more about Next.js, take a look at the following resources:
+### Déploiement sur AWS Amplify
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Pusher votre code sur GitHub** :
+```bash
+cd landing-page
+git init
+git add .
+git commit -m "Initial commit - CampusNumerique landing page"
+git branch -M main
+git remote add origin https://github.com/Arnauldzeh/campus-numerique-landing-page.git
+git push -u origin main
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Configurer AWS Amplify** :
+   - Aller sur [AWS Amplify Console](https://console.aws.amazon.com/amplify/)
+   - Cliquer sur "New app" → "Host web app"
+   - Sélectionner "GitHub" et autoriser l'accès
+   - Choisir votre repository `campus-numerique-landing-page`
+   - Configurer le build :
+     - **App name**: campus-numerique
+     - **Branch**: main
+     - **Build settings**: Amplify détectera automatiquement le fichier `amplify.yml`
+   - Cliquer sur "Save and deploy"
 
-## Deploy on Vercel
+3. **Variables d'environnement** (si nécessaire) :
+   - Dans Amplify Console → App settings → Environment variables
+   - Ajouter vos variables si besoin
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Custom domain** (optionnel) :
+   - Aller dans "Domain management"
+   - Ajouter votre domaine personnalisé
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Configuration avancée
+
+Le fichier `amplify.yml` est déjà configuré pour :
+- ✅ Installation des dépendances avec npm
+- ✅ Build optimisé de Next.js
+- ✅ Cache des modules pour des builds plus rapides
+- ✅ Support des routes dynamiques Next.js
+
+### Déploiement manuel (alternative)
+
+```bash
+# Installer AWS Amplify CLI
+npm install -g @aws-amplify/cli
+
+# Configurer Amplify
+amplify configure
+
+# Initialiser le projet
+amplify init
+
+# Publier
+amplify publish
+```
+
+## 📝 Scripts disponibles
+
+- `npm run dev` - Lance le serveur de développement
+- `npm run build` - Build de production
+- `npm start` - Lance le serveur de production
+- `npm run lint` - Vérifie le code avec ESLint
+
+## 🎨 Personnalisation
+
+### Couleurs principales
+- Purple: `#7C3AED` (purple-600)
+- Orange: `#F97316` (orange-500)
+- Gray dark: `#1F2937` (gray-800)
+
+### Modifier le contenu
+
+- **Page d'accueil**: `app/page.tsx`
+- **Page bootcamp**: `app/bootcamp/[id]/page.tsx`
+- **Layout global**: `app/layout.tsx`
+
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à ouvrir une issue ou un pull request.
